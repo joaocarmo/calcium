@@ -1,0 +1,37 @@
+first point (105.80175, 60.0)
+last point (52.771, 310.0)
+
+
+
+log f(t) = A + B x log t
+
+A = -0.458188646779
+B = 6.43869071324
+R2 = 0.941528151585
+
+
+
+the integral of f(t) = 625.587190353 x t ^ -0.458188646779
+from 60.0s to 310.0s is
+
+I-func = 15226.1302478
+
+
+
+the numerical integral of the data from the first point to the last is
+
+I-data = 14721.7991667
+
+
+
+the total area of the rectangle which includes the
+first and last points as vertices is
+
+Area = 26450.4375
+
+
+
+the difference in area - integral is, respectively
+
+Area - I-func = 11224.3072522
+Area - I-data = 11728.6383333
