@@ -10,11 +10,18 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Settings
-showPlots = True
+# --- SETTINGS START --- #
 
+# Show data plots
+showPlots = True
 # Data sorce
 data = 'data_calcium_handling.csv'
+# Ignore the first X data points from the source
+start = 7
+# Where to cutoff the data points for the analysis
+cutoff = 25
+
+# ---- SETTINGS END ---- #
 
 # Arrays to hold the raw data
 x1 = []
@@ -33,8 +40,6 @@ with open(data, 'rb') as f:
         x4.append(row[3])
         sec.append(row[4])
 
-# Ignore the first X data points
-start = 7
 x1_s = x1[start:]
 x2_s = x2[start:]
 x3_s = x3[start:]
@@ -56,7 +61,6 @@ p = np.poly1d(z)
 avg_fit = p(time)
 
 # Interpolate the first X data points as log f = A + B log t
-cutoff = 25
 log_avg_x = np.log(avg_x[:cutoff])
 log_time = np.log(time[:cutoff])
 slope, intercept, r_value, p_value, std_err = stats.linregress(log_time, log_avg_x)
