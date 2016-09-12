@@ -52,6 +52,20 @@ Columns in red have been removed, the script calculates the _mean_ for better re
 
 This is an example of how the source file should look like and the line numbers can be used to set the start and end of the data points.
 
-## Data model
+## Model
 
-The assumed model that better describes the observed behavior can be found in the `equations.pdf` file.
+The assumed model that better describes the observed behavior can be found in the `/docs/equations.pdf` file.
+
+#### Exponential function
+
+After some trial and error, it seemed to me that the best fit for the range of data we're interested in is given by `equation 1`. This can be linearized by applying logarithms as in `equation 2` and thus we can use a simple linear regression on the data to obtain the values for the constants `A` and `B`. We are finally able to compute the expected values given by the model and compare them to the data.
+
+###### Equation 1
+![equation 1](/docs/eq1.png)
+
+###### Equation 2
+![equation 1](/docs/eq2.png)
+
+## Fitting the data
+
+From the data samples included, we are already able to display some graphs (see the `docs`).
