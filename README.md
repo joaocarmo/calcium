@@ -69,3 +69,32 @@ After some trial and error, it seemed to me that the best fit for the range of d
 ## Fitting the data
 
 From the data samples included, we are already able to display some graphs (see the `docs`).
+
+#### The original data with a polynomial fit
+
+Below is the original data plotted as a graph of fluorescence (rfu) against time (t) and a 3rd degree polynomial fit just to show how the data trends.
+
+![plot 1](/docs/figure_1.png)
+
+#### The linearized data
+
+The second graph is a plot of a limited range of the data linearized according to `equation 2`.
+
+![plot 2](/docs/figure_2.png)
+
+#### The model and the data
+
+The final plot shows how the model fits the selected range of data we used to compute the values for model's constants `A` and `B`.
+
+![plot 3](/docs/figure_3.png)
+
+#### The results
+
+The regression returned the output in the box below:
+```
+A = 6.43869071324
+B = -0.458188646779
+R2 = 0.941528151585
+```
+
+As expected, the value for `B` in negative and inferior to 1. The correlation between the model and the selected range of data is high (close to 1) and given by the coefficient of determination `R2`.
