@@ -110,3 +110,7 @@ And with [simps](http://docs.scipy.org/doc/scipy/reference/generated/scipy.integ
 The area of the whole rectangle is `26450.4375` given by `height x width` where the height is the highest point on the y-axis for the the x-axis interval we are considering, which is also the width.
 
 The differences are thus, respectively, `11224.3072522` and `11728.6383333` for the model and data integrations.
+
+#### Remarks
+
+The model in `equation 1` seems to be a good fit for the **transition** period, but it will fail if we try to extrapolate its results further than the transition phase and into the **equilibrium**. Some other mechanism must have a stronger influence afterwards and its behavior is best described by a different model.
