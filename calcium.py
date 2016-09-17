@@ -68,6 +68,7 @@ p2 = np.poly1d([slope, intercept])
 avg_log_fit = p2(log_time)
 r2_value = r_value ** 2
 
+# Get the value of A from ln A and of B from the slope
 A = np.exp(intercept)
 B = slope
 
@@ -91,7 +92,7 @@ diff_I_data = total_area - I_data
 
 # Print out the results to the console
 print '\nfirst point (' + str(avg_x[0]) + ', ' + str(time[0]) + ')' + '\nlast point (' + str(avg_x[cutoff]) + ', ' + str(time[cutoff]) + ')\n\n'
-print '\nlog f(t) = A + B x log t\n' + '\nA = ' + str(intercept) + '\nB = ' + str(slope) + '\nR2 = ' + str(r2_value) + '\n\n'
+print '\nlog f(t) = ln A + B x log t\n' + '\nA = ' + str(A) + '\nB = ' + str(slope) + '\nR2 = ' + str(r2_value) + '\n\n'
 print '\nthe integral of f(t) = ' + str(A) + ' x t ^ ' + str(B) + '\nfrom ' + str(time[0]) + 's to ' + str(time[cutoff]) + 's is\n\nI-func = ' + str(I[0]) + '\n\n'
 print '\nthe numerical integral of the data from the first point to the last is\n\nI-data = ' + str(I_data) + '\n\n'
 print '\nthe total area of the rectangle which includes the\nfirst and last points as vertices is\n\nArea = ' + str(total_area) + '\n\n'

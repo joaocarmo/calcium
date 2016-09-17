@@ -92,9 +92,21 @@ The final plot shows how the model fits the selected range of data we used to co
 
 The regression returned the output in the box below:
 ```
-A = 6.43869071324
+A = 625.587190353
 B = -0.458188646779
 R2 = 0.941528151585
 ```
 
 As expected, the value for `B` in negative and inferior to 1. The correlation between the model and the selected range of data is high (close to 1) and given by the coefficient of determination `R2`.
+
+#### Area above and below the curve
+
+Now that we have the values for our model, we can use it to integrate the curve and obtain the area below it. We can also do it using numerical analysis with the raw experimental data. We finally use the axis to calculate the area of the whole rectangle and by subtracting the area below, we get the area above the curve.
+
+Using [quad](http://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.quad.html) from SciPy's `integrate` package, we obtain the integral of `f(t) = 625.587190353 x t ^ -0.458188646779` from `60.0s` to `310.0s` as `15226.1302478`.
+
+And with [simps](http://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.simps.html), also from SciPy's `integrate` package, we obtain the numerical integral of the data from the first point to the last as `14721.7991667`.
+
+The area of the whole rectangle is `26450.4375` given by `height x width` where the height is the highest point on the y-axis for the the x-axis interval we are considering, which is also the width.
+
+The differences are thus, respectively, `11224.3072522` and `11728.6383333` for the model and data integrations.
