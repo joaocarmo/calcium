@@ -30,7 +30,7 @@ The script starts by importing the `scipy`, `csv`, `numpy` and `matplotlib` libr
 * Start of the relevant data points
 * End of the relevant data points
 
-The script proceeds to import the data from the source `.csv` file and filters it to considers only the data points within the range defined in the settings.
+The script proceeds to import the data from the source `.csv` file, calculates the _mean_ of the four series and filters it to considers only the data points within the range defined in the settings.
 
 It uses the previously considered data to find the best regression fit according to the assumed model. Data integration is performed using two different methods: a numerical integration using the actual data and an analytic integration using the estimated model.
 
